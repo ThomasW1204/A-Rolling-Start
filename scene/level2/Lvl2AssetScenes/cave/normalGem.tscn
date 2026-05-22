@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://chd5hflq3orc0"]
+
+[ext_resource type="PackedScene" uid="uid://dt3v83eu61srs" path="res://assets/items/Gem(1).glb" id="1_si8cg"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Gem(1)" parent="." instance=ExtResource("1_si8cg")]

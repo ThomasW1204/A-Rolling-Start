@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://e2un8weolyla"]
+
+[ext_resource type="PackedScene" uid="uid://ek2iu2ye7sgn" path="res://assets/items/Stone Walkway.glb" id="1_luqqb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipfsa"]
+size = Vector3(0.018104553, 0.001, 0.01826477)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_luqqb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root Scene/RootNode/walkway-stone" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene/RootNode/walkway-stone/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00021743774, -0.0002481927, 5.3405744e-05)
+shape = SubResource("BoxShape3D_ipfsa")
+
+[editable path="Root Scene"]

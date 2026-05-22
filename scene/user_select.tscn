@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://ruhwsieydm8o"]
+
+[ext_resource type="Script" uid="uid://dervuqmfm1bns" path="res://scripts/user_select.gd" id="1_a7ac0"]
+[ext_resource type="Texture2D" uid="uid://ba366quclcjnh" path="res://art/magicpattern-oPH_5xuMgQw-unsplash.jpg" id="2_fyiqn"]
+
+[node name="UserSelect" type="Node2D"]
+script = ExtResource("1_a7ac0")
+
+[node name="MagicpatternOPh5XuMgQwUnsplash" type="Sprite2D" parent="."]
+position = Vector2(733.0001, 319.74997)
+scale = Vector2(0.28554684, 0.27725703)
+texture = ExtResource("2_fyiqn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 113.0
+offset_top = 51.0
+offset_right = 334.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Select a User"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 810.0
+offset_top = 59.0
+offset_right = 1031.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Create a User"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 43.0
+offset_top = 139.0
+offset_right = 425.0
+offset_bottom = 542.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 41.0
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 145.0
+offset_right = 1044.0
+offset_bottom = 186.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 192.0
+offset_right = 1123.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Sorry, that name is already taken. Please try another"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+oversampling_override = 1.0
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+oversampling_override = 1.0
+size = Vector2i(217, 136)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 213.0
+offset_bottom = 132.0
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+text = "What would you like to do?"
+
+[node name="Resume" type="Button" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+text = "Resume Game"
+
+[node name="viewData" type="Button" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+text = "View Data"
+
+[node name="Cancel" type="Button" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="backButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 985.0
+offset_top = 18.0
+offset_right = 1124.0
+offset_bottom = 65.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 28
+text = "Back"
+
+[connection signal="text_submitted" from="Control/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/viewData" to="." method="_on_view_data_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

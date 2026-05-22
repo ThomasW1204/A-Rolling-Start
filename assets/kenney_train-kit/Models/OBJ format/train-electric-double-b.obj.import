@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kb5pn1v4u5t8"
+path="res://.godot/imported/train-electric-double-b.obj-fb03daed9d3de6bc563aa645a6ac3aad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-electric-double-b.obj-fb03daed9d3de6bc563aa645a6ac3aad.mesh"]
+
+source_file="res://assets/kenney_train-kit/Models/OBJ format/train-electric-double-b.obj"
+dest_files=["res://.godot/imported/train-electric-double-b.obj-fb03daed9d3de6bc563aa645a6ac3aad.mesh", "res://.godot/imported/train-electric-double-b.obj-fb03daed9d3de6bc563aa645a6ac3aad.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

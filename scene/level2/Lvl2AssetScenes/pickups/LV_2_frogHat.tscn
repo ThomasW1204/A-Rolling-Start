@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8gn3bjtqffl4"]
+
+[ext_resource type="PackedScene" uid="uid://cn4j8te6dl5l4" path="res://assets/items/Frog Hat.glb" id="1_7cyb4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Frog Hat" parent="." instance=ExtResource("1_7cyb4")]
+transform = Transform3D(-5.9212145e-08, 0, 1.285798, 0, 1, 0, -1.354616, 0, -5.6204012e-08, 0, -0.34390387, 0)

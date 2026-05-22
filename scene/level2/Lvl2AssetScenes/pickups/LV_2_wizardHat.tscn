@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vis1p1e8xrum"]
+
+[ext_resource type="PackedScene" uid="uid://dsmwmgxht5hvu" path="res://assets/items/Wizard hat.glb" id="1_ve4mw"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Wizard hat" parent="." instance=ExtResource("1_ve4mw")]
+transform = Transform3D(0.3304378, 0, 0, 0, 0.28567734, 0, 0, 0, 0.29791677, 0, -0.364604, 0)

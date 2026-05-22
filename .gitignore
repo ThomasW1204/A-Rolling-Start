@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+assets\kenney_car-kit
+assets\kenney_castle-kit
+assets\kenney_city-kit-commercial_2.1
+assets\kenney_modular-dungeon-kit_1.0
+assets\kenney_modular-dungeon-kit_1.0
+assets\kenney_nature-kit
+assets\kenney_train-kit
+assets\fonts

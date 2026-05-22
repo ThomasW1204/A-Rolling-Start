@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy1n6gb662o2m"]
+
+[ext_resource type="PackedScene" uid="uid://dwocol1hg842j" path="res://assets/items/Propeller hat.glb" id="1_wrleu"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Propeller hat" parent="." instance=ExtResource("1_wrleu")]
+transform = Transform3D(0.11825625, 0, 0, 0, 0.1, 0, 0, 0, 0.108326055, 0, -0.17498982, 0.12399936)

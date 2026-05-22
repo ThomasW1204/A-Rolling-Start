@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bldmihd6dyaqw"]
+
+[ext_resource type="PackedScene" uid="uid://hrnsegtaf5n2" path="res://assets/items/Duckling.glb" id="1_5dc06"]
+[ext_resource type="AudioStream" uid="uid://b5bn35i8b6d08" path="res://assets/Sounds/freesound_community-075176_duck-quack-40345.mp3" id="2_aatbu"]
+
+[node name="duck" type="Node3D"]
+transform = Transform3D(-4.371139e-09, 0, -0.092, 0, 0.088, 0, 0.1, 0, -4.0214476e-09, 0, 0, 0)
+
+[node name="Duckling" parent="." instance=ExtResource("1_5dc06")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Quack" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_aatbu")

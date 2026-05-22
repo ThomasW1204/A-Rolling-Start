@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://bytm52qftddnc"]
+
+[ext_resource type="Script" uid="uid://b8skj6ck2uylk" path="res://scripts/main_menu.gd" id="1_3er1b"]
+[ext_resource type="Texture2D" uid="uid://ba366quclcjnh" path="res://art/magicpattern-oPH_5xuMgQw-unsplash.jpg" id="2_hxu56"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3er1b")
+
+[node name="MagicpatternOPh5XuMgQwUnsplash" type="Sprite2D" parent="."]
+position = Vector2(708.5, 324.5)
+scale = Vector2(0.2998047, 0.24618055)
+texture = ExtResource("2_hxu56")
+
+[node name="buttonManager" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="buttonManager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.439
+anchor_right = 0.52900004
+offset_left = -124.72803
+offset_top = 52.0
+offset_right = 204.59192
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 51
+text = "A Rolling Start"
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttonManager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -170.0
+offset_right = 150.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="start" type="Button" parent="buttonManager/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="options" type="Button" parent="buttonManager/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="exit" type="Button" parent="buttonManager/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[connection signal="pressed" from="buttonManager/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttonManager/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="buttonManager/VBoxContainer/exit" to="." method="_on_exit_pressed"]

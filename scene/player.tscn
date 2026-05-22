@@ -1,0 +1,179 @@
+[gd_scene load_steps=15 format=3 uid="uid://85kl86m4mv2b"]
+
+[ext_resource type="Script" uid="uid://fmy4psqypshc" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://dn7sbmiypvtwd" path="res://art/whiteBox.png" id="2_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://dnhvlog7nvoad" path="res://art/blackBox.png" id="3_fvtld"]
+[ext_resource type="PackedScene" uid="uid://7au4gxjuvoce" path="res://scene/pause_menu.tscn" id="4_ct4mp"]
+[ext_resource type="PackedScene" uid="uid://b83sney1ykxxk" path="res://scene/options.tscn" id="6_hp4bs"]
+[ext_resource type="Texture2D" uid="uid://bowekdfe6mr1m" path="res://art/a292ed6ffc553d3820d5d2b66f667343-591072741.png" id="6_oh5ij"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4jxa"]
+albedo_texture = ExtResource("2_ct4mp")
+
+[sub_resource type="SphereMesh" id="SphereMesh_hqtel"]
+material = SubResource("StandardMaterial3D_s4jxa")
+
+[sub_resource type="SphereMesh" id="SphereMesh_i3pqv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct4mp"]
+albedo_texture = ExtResource("3_fvtld")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s4jxa"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4flbx"]
+radius = 0.6
+
+[sub_resource type="LabelSettings" id="LabelSettings_hp4bs"]
+font_size = 50
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s4jxa"]
+font_size = 46
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_4flbx")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="bodyMesh" type="MeshInstance3D" parent="Visuals"]
+mesh = SubResource("SphereMesh_hqtel")
+skeleton = NodePath("../..")
+
+[node name="hatAnchor" type="Marker3D" parent="Visuals"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.50575763, 0)
+
+[node name="eye1" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(-0.22650701, 0, -1.8988489e-08, 0, 0.20907195, 0, 1.9801872e-08, 0, -0.217203, 0.21780801, 0.17362359, 0.35636398)
+mesh = SubResource("SphereMesh_i3pqv")
+skeleton = NodePath("../bodyMesh")
+
+[node name="Pupil1" type="MeshInstance3D" parent="Visuals/eye1"]
+transform = Transform3D(-0.39999998, 0, -3.0597977e-08, 0, 0.39999998, 0, 3.496911e-08, 0, -0.35000005, 0, 0, 0.36)
+mesh = SubResource("SphereMesh_i3pqv")
+skeleton = NodePath("../../bodyMesh")
+surface_material_override/0 = SubResource("StandardMaterial3D_ct4mp")
+
+[node name="eye2" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(-0.23591092, 0, -1.8988489e-08, 0, 0.20907193, 0, 2.0623988e-08, 0, -0.217203, -0.18219197, 0.17362359, 0.34948796)
+mesh = SubResource("SphereMesh_i3pqv")
+skeleton = NodePath("../bodyMesh")
+
+[node name="Pupil2" type="MeshInstance3D" parent="Visuals/eye2"]
+transform = Transform3D(0.39999998, 0, 0, 0, 0.39999995, 0, 0, 0, 0.35, -0.0024433136, 0, 0.36000156)
+mesh = SubResource("SphereMesh_i3pqv")
+skeleton = NodePath("../../bodyMesh")
+surface_material_override/0 = SubResource("StandardMaterial3D_ct4mp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_s4jxa")
+
+[node name="hitbox" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hitbox"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_4flbx")
+
+[node name="camOrgin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20000002, 0.0111505985)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camOrgin"]
+transform = Transform3D(-1, 0, 8.742278e-08, 2.990035e-08, 0.9396926, 0.34202012, -8.2150535e-08, 0.34202012, -0.9396926, 0, 0.2000001, -0.29584742)
+spring_length = 3.5
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="camOrgin/SpringArm3D"]
+transform = Transform3D(1, 3.044658e-08, 5.270536e-09, -3.0413055e-08, 0.9999805, -0.006248176, -5.46067e-09, 0.006248176, 0.9999805, 2.1813796e-07, -0.009038925, 2.4952078)
+
+[node name="hud2" type="CanvasLayer" parent="."]
+
+[node name="itemLabel" type="Label" parent="hud2"]
+visible = false
+offset_left = 5.0
+offset_right = 58.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 16
+text = "Items: "
+label_settings = SubResource("LabelSettings_hp4bs")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="hud2"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_bottom = 255.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="hud2"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 250.0
+grow_horizontal = 0
+
+[node name="SubViewport" type="SubViewport" parent="hud2/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(250, 250)
+render_target_update_mode = 0
+
+[node name="backup" type="Camera3D" parent="hud2/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.9019682, 0.4318024, 0, -0.4318024, 0.9019682, 0, 2.0061145, -0.62291646)
+
+[node name="pause" type="CanvasLayer" parent="."]
+
+[node name="pauseMenu" parent="pause" instance=ExtResource("4_ct4mp")]
+
+[node name="speed" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="speed"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -698.0
+offset_top = -318.5
+offset_right = 698.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_oh5ij")
+expand_mode = 2
+
+[node name="caveLabel" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="caveLabel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -11.5
+offset_right = 95.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "You heard a door open..."
+label_settings = SubResource("LabelSettings_s4jxa")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9019682, 0.4318024, 0, -0.4318024, 0.9019682, 0, 2.0061145, -0.62291646)
+remote_path = NodePath("../hud2/SubViewportContainer/SubViewport/backup")
+
+[node name="optionscanvas" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="options" parent="optionscanvas" instance=ExtResource("6_hp4bs")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

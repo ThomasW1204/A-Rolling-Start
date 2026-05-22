@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddiwdatuv8im4"]
+
+[ext_resource type="Script" uid="uid://c4ffmtqkopxu7" path="res://scripts/gatcha_machine.gd" id="1_awlaj"]
+[ext_resource type="Texture2D" uid="uid://dnhvlog7nvoad" path="res://art/blackBox.png" id="1_xkwv7"]
+[ext_resource type="Texture2D" uid="uid://blr1d7kvdsida" path="res://art/redBox.png" id="2_awlaj"]
+[ext_resource type="Texture2D" uid="uid://b6wgv7qef6co2" path="res://art/gatcha.jpg" id="3_s7a7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs46r"]
+albedo_texture = ExtResource("1_xkwv7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvom5"]
+albedo_texture = ExtResource("2_awlaj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4erai"]
+albedo_texture = ExtResource("3_s7a7l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7a7l"]
+size = Vector3(1.1002197, 0.33166504, 1.0958252)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45mse"]
+albedo_texture = ExtResource("2_awlaj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onv7t"]
+albedo_texture = ExtResource("1_xkwv7")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_awlaj")
+
+[node name="machine" type="Node3D" parent="."]
+transform = Transform3D(1.495097, 0, 0, 0, 0.25826663, 0, 0, 0, 1.5207238, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="machine"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.50667953, 0, 0, 0, 0.7189503, 0, 0, -0.0363245)
+material_override = SubResource("StandardMaterial3D_rs46r")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="machine"]
+transform = Transform3D(0.5327794, 0, 0, 0, 4.86742, 0, 0, 0, 0.5218803, 0, 1.5697321, -0.03799534)
+material_override = SubResource("StandardMaterial3D_rvom5")
+use_collision = true
+size = Vector3(1, 0.7705078, 0.8803711)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="machine"]
+transform = Transform3D(0.99999994, 0, 0, 0, 4.2946267, 0, 0, 0, 0.8694272, 0.0032730103, 5.1987505, -0.031442642)
+material_override = SubResource("StandardMaterial3D_4erai")
+use_collision = true
+radius = 0.52116424
+radial_segments = 19
+rings = 24
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="machine"]
+transform = Transform3D(-0.00079114677, -0.03216884, 0, 0.31479734, -8.084837e-05, 0, 0, 0, 0.08621651, -0.25476694, 2.395712, -0.03111744)
+use_collision = true
+sides = 22
+
+[node name="button" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4458506, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="button"]
+transform = Transform3D(0.907587, 0, 0, 0, 0.51054907, 0, 0, 0, 0.91450053, -2.210111, 0.16252029, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button/Area3D"]
+transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0, 0, 0)
+shape = SubResource("BoxShape3D_s7a7l")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="button"]
+transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.99999964, -2.222439, 0.00092971325, 0)
+material_override = SubResource("StandardMaterial3D_45mse")
+use_collision = true
+size = Vector3(1, 0.055664063, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2262726, 0.004333496, -0.0029907227)
+material_override = SubResource("StandardMaterial3D_onv7t")
+use_collision = true
+size = Vector3(1.0490723, 0.04699707, 1.048706)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8696868, 0.39220345, 0)
+
+[connection signal="body_entered" from="button/Area3D" to="." method="_on_area_3d_body_entered"]

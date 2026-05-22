@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3p805peps3sp"]
+
+[ext_resource type="PackedScene" uid="uid://clrojelbh8v85" path="res://assets/items/Pirate hat.glb" id="1_q8wps"]
+
+[node name="PirateHat" type="Node3D"]
+
+[node name="Pirate hat" parent="." instance=ExtResource("1_q8wps")]
+transform = Transform3D(0.093141, 0, 0, 0, 0.109949924, 0, 0, 0, 0.113673456, 0, 0, 0)

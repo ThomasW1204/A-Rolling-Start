@@ -1,0 +1,108 @@
+[gd_scene load_steps=27 format=3 uid="uid://m4llgmkt0tdc"]
+
+[ext_resource type="PackedScene" uid="uid://c1kdbdpsgbq7r" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockCave_rock.glb" id="1_n7o25"]
+[ext_resource type="PackedScene" uid="uid://dulhori51r46c" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockDiagonal_rock.glb" id="2_tsok2"]
+[ext_resource type="PackedScene" uid="uid://bi55d3g110uns" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockHalf_rock.glb" id="3_u53to"]
+[ext_resource type="PackedScene" uid="uid://cit6a7s63vxu8" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockQuarter_rock.glb" id="4_0j8jh"]
+[ext_resource type="PackedScene" uid="uid://bmt5h5u0li8gm" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockSlopeHalfWalls_rock.glb" id="5_rptw5"]
+[ext_resource type="PackedScene" uid="uid://g151fs0sylre" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockSlopeWalls_rock.glb" id="6_kum8p"]
+[ext_resource type="PackedScene" uid="uid://doegk5ksqai5m" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_blockSlope_rock.glb" id="7_qgctu"]
+[ext_resource type="PackedScene" uid="uid://dtg0xcr42ykmv" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_block_rock.glb" id="8_ko06l"]
+[ext_resource type="PackedScene" uid="uid://bc43pcem4suv5" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_cave_rock.glb" id="9_w6k8k"]
+[ext_resource type="PackedScene" uid="uid://b0m71rwgtypj1" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_cornerInnerLarge_rock.glb" id="10_yahdu"]
+[ext_resource type="PackedScene" uid="uid://clt40kfxggqkc" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_cornerInnerTop_rock.glb" id="11_ixsgu"]
+[ext_resource type="PackedScene" uid="uid://bv723vfnd87uu" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_cornerInner_rock.glb" id="12_xabms"]
+[ext_resource type="PackedScene" uid="uid://csalk8a7r1236" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_cornerLarge_rock.glb" id="13_fdmsd"]
+[ext_resource type="PackedScene" uid="uid://cjbvjspnyp7c1" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_cornerTop_rock.glb" id="14_1fvq8"]
+[ext_resource type="PackedScene" uid="uid://buvmbjcmuax3f" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_corner_rock.glb" id="15_qrih5"]
+[ext_resource type="PackedScene" uid="uid://chpjqjyk5fsfo" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_diagonal_rock.glb" id="16_dsl26"]
+[ext_resource type="PackedScene" uid="uid://xqu463ay6kba" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_halfCornerInner_rock.glb" id="17_6wru4"]
+[ext_resource type="PackedScene" uid="uid://glerjktyufsk" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_halfCorner_rock.glb" id="18_ok7gc"]
+[ext_resource type="PackedScene" uid="uid://brknm5bv2aj3e" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_half_rock.glb" id="19_mkv3b"]
+[ext_resource type="PackedScene" uid="uid://b572oogpqsawm" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_large_rock.glb" id="20_q36f5"]
+[ext_resource type="PackedScene" uid="uid://cwybxf0t2egt6" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_rock.glb" id="21_l5vfb"]
+[ext_resource type="PackedScene" uid="uid://b3f488yjpb8vk" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_stepsCornerInner_rock.glb" id="22_vpdmd"]
+[ext_resource type="PackedScene" uid="uid://4kovc6c0p3ga" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_stepsCorner_rock.glb" id="23_hr74s"]
+[ext_resource type="PackedScene" uid="uid://cj8j0tj2qym6o" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_steps_rock.glb" id="24_a0lfh"]
+[ext_resource type="PackedScene" uid="uid://ce68exrw4yg3" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_topDiagonal_rock.glb" id="25_23fon"]
+[ext_resource type="PackedScene" uid="uid://bcvql66vxq88i" path="res://assets/kenney_nature-kit/Models/GLTF format/cliff_top_rock.glb" id="26_fhf3e"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="cliff_blockCave_rock2" parent="." instance=ExtResource("1_n7o25")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.581171, 0, 0)
+
+[node name="cliff_blockDiagonal_rock2" parent="." instance=ExtResource("2_tsok2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 22.777306, 0, -13.33213)
+
+[node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("3_u53to")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 14.827358)
+
+[node name="cliff_blockQuarter_rock2" parent="." instance=ExtResource("4_0j8jh")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 8.385651, 0, -10.014966)
+
+[node name="cliff_blockSlopeHalfWalls_rock2" parent="." instance=ExtResource("5_rptw5")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.798264, 0, -4.598669)
+
+[node name="cliff_blockSlopeWalls_rock2" parent="." instance=ExtResource("6_kum8p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.61483, 0, 0)
+
+[node name="cliff_blockSlope_rock2" parent="." instance=ExtResource("7_qgctu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6.284496, 0, 0)
+
+[node name="cliff_block_rock2" parent="." instance=ExtResource("8_ko06l")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -41.560257, 0, 0)
+
+[node name="cliff_cave_rock2" parent="." instance=ExtResource("9_w6k8k")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -24.042152)
+
+[node name="cliff_cornerInnerLarge_rock2" parent="." instance=ExtResource("10_yahdu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.459714, 0, 14.301493)
+
+[node name="cliff_cornerInnerTop_rock2" parent="." instance=ExtResource("11_ixsgu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -13.029861, 0, 22.525671)
+
+[node name="cliff_cornerInner_rock2" parent="." instance=ExtResource("12_xabms")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 27.791534, 0, 0)
+
+[node name="cliff_cornerLarge_rock2" parent="." instance=ExtResource("13_fdmsd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 17.172255, 0, -10.331969)
+
+[node name="cliff_cornerTop_rock2" parent="." instance=ExtResource("14_1fvq8")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -16.693714, 0, 0)
+
+[node name="cliff_corner_rock2" parent="." instance=ExtResource("15_qrih5")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.158031, 0, 0)
+
+[node name="cliff_diagonal_rock2" parent="." instance=ExtResource("16_dsl26")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 27.685469)
+
+[node name="cliff_halfCornerInner_rock2" parent="." instance=ExtResource("17_6wru4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 22.888346, 0, 4.98946)
+
+[node name="cliff_halfCorner_rock2" parent="." instance=ExtResource("18_ok7gc")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -21.33311)
+
+[node name="cliff_half_rock2" parent="." instance=ExtResource("19_mkv3b")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 17.124289, 0, 9.116154)
+
+[node name="cliff_large_rock2" parent="." instance=ExtResource("20_q36f5")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.321154, 0, 8.234587)
+
+[node name="cliff_rock2" parent="." instance=ExtResource("21_l5vfb")]
+transform = Transform3D(4.989505, 0, -0.32379362, 0, 5, 0, 0.32379362, 0, 4.989505, -22.508839, 0, -11.408111)
+
+[node name="cliff_stepsCornerInner_rock2" parent="." instance=ExtResource("22_vpdmd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -15.092776)
+
+[node name="cliff_stepsCorner_rock2" parent="." instance=ExtResource("23_hr74s")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12.468805, 0, -11.091577)
+
+[node name="cliff_steps_rock2" parent="." instance=ExtResource("24_a0lfh")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -8.249456)
+
+[node name="cliff_topDiagonal_rock2" parent="." instance=ExtResource("25_23fon")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 13.357973, 0, 0)
+
+[node name="cliff_top_rock2" parent="." instance=ExtResource("26_fhf3e")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.797551, 0, -20.400908)

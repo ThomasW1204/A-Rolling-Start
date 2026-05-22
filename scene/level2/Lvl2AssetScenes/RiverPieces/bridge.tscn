@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://kltq3aaeeys8"]
+
+[ext_resource type="PackedScene" uid="uid://dig1fdx6j0qic" path="res://assets/kenney_nature-kit/Models/GLTF format/bridge_wood.glb" id="1_4liot"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4liot"]
+size = Vector3(0.8078308, 0.1929779, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mx2ri"]
+size = Vector3(0.27371264, 0.02709961, 0.92041016)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anpy4"]
+size = Vector3(1, 0.8989258, 0.09710693)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="bridge_wood2" parent="." instance=ExtResource("1_4liot")]
+
+[node name="bridge_wood" parent="bridge_wood2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00095778704, -0.05000001, 3.9339066e-05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bridge_wood2/bridge_wood" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bridge_wood2/bridge_wood/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010360718, 0.10416412, 0)
+shape = SubResource("BoxShape3D_4liot")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="bridge_wood2/bridge_wood/StaticBody3D"]
+transform = Transform3D(0.84394425, -0.53643084, 0, 0.53643084, 0.84394425, 0, 0, 0, 1, -0.50452346, 0.114603564, 0)
+shape = SubResource("BoxShape3D_mx2ri")
+debug_color = Color(0.69505036, 0.28301603, 1, 0.41960785)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="bridge_wood2/bridge_wood/StaticBody3D"]
+transform = Transform3D(0.8380617, 0.5455755, 0, -0.5455755, 0.8380617, 0, 0, 0, 1, 0.52141273, 0.11503136, 0)
+shape = SubResource("BoxShape3D_mx2ri")
+debug_color = Color(0.69505036, 0.28301603, 1, 0.41960785)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="bridge_wood2/bridge_wood/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.050537113, -0.4505825)
+shape = SubResource("BoxShape3D_anpy4")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="bridge_wood2/bridge_wood/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.050537113, 0.44969982)
+shape = SubResource("BoxShape3D_anpy4")
+
+[editable path="bridge_wood2"]

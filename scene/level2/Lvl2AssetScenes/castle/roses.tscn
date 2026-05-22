@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbg2ainv3q43u"]
+
+[ext_resource type="PackedScene" uid="uid://b3mq40jmqd4xh" path="res://assets/items/Roses.glb" id="1_moyml"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Roses" parent="." instance=ExtResource("1_moyml")]

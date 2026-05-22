@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://ck2q3t4tomb5p"]
+
+[ext_resource type="PackedScene" uid="uid://ydo0wln8ick1" path="res://assets/items/Star.glb" id="1_ia2ko"]
+[ext_resource type="Script" uid="uid://bwryl7k3gyurr" path="res://scripts/lvl2Scripts/lv_2_star.gd" id="1_tny0n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tny0n"]
+size = Vector3(2.4570313, 2.046936, 2.392212)
+
+[sub_resource type="Gradient" id="Gradient_tny0n"]
+offsets = PackedFloat32Array(0, 0.49056605, 0.990566)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_akoh1"]
+gradient = SubResource("Gradient_tny0n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cs8ob"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 1, 0)
+scale_min = 0.0
+scale_max = 0.0
+color_ramp = SubResource("GradientTexture1D_akoh1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akoh1"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0.30980393, 1)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+stencil_flags = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_upquq"]
+material = SubResource("StandardMaterial3D_akoh1")
+size = Vector2(0.3, 0.3)
+
+[node name="star" type="Node3D"]
+script = ExtResource("1_tny0n")
+
+[node name="Star" parent="." instance=ExtResource("1_ia2ko")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Star"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Star/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09277344, 0.98962224, 0.13116455)
+shape = SubResource("BoxShape3D_tny0n")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Star"]
+transform = Transform3D(0.714608, 0, 0, 0, 0.6498291, 0, 0, 0, 1.118966, 0, 0.5929935, 0)
+amount = 10
+explosiveness = 0.23
+randomness = 0.08
+process_material = SubResource("ParticleProcessMaterial_cs8ob")
+draw_pass_1 = SubResource("QuadMesh_upquq")
+
+[connection signal="body_entered" from="Star/Area3D" to="." method="_on_area_3d_body_entered"]

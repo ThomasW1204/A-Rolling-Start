@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jyel2ho7crq7"]
+
+[ext_resource type="PackedScene" uid="uid://cgmn2unlvkw6o" path="res://assets/items/Headphones(1).glb" id="1_jphaj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_jphaj")]
+transform = Transform3D(10.570297, 0, 0, 0, 6.569316, 0, 0, 0, 8.490152, 0, -0.5765009, 0)
+
+[editable path="Root Scene"]

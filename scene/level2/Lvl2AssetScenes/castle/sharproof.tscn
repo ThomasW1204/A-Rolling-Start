@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7lmo8yssp4jm"]
+
+[ext_resource type="PackedScene" uid="uid://bge6fwufwxrcx" path="res://assets/kenney_castle-kit/Models/GLB format/tower-square-top-roof-high.glb" id="1_nh80f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tower-square-top-roof-high2" parent="." instance=ExtResource("1_nh80f")]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dofskp74g5nxq"]
+
+[ext_resource type="PackedScene" uid="uid://dhkga4q002ono" path="res://assets/items/Paint Can.glb" id="1_og7wu"]
+[ext_resource type="Texture2D" uid="uid://dn7sbmiypvtwd" path="res://art/whiteBox.png" id="2_gh1om"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyi45"]
+albedo_texture = ExtResource("2_gh1om")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_um4yk"]
+albedo_texture = ExtResource("2_gh1om")
+
+[node name="whitePaint" type="Node3D"]
+
+[node name="Paint Can" parent="." instance=ExtResource("1_og7wu")]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Paint Can"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10334909, 0)
+material_override = SubResource("StandardMaterial3D_cyi45")
+radius = 0.28857422
+height = 0.22265625
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Paint Can"]
+transform = Transform3D(1.1399968, 0, 0, 0, 1.2452651, 0, 0, 0, 1.1489034, 0, -0.0017534494, 0.018002048)
+material_override = SubResource("StandardMaterial3D_um4yk")
+radius = 0.2788086
+height = 0.29516602
+sides = 30
+
+[editable path="Paint Can"]

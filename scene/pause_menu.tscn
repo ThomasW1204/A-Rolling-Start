@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://7au4gxjuvoce"]
+
+[ext_resource type="Script" uid="uid://b3c7pa2tr0ena" path="res://scripts/pause_menu.gd" id="1_grdc7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_grdc7"]
+font_size = 46
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="pauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_grdc7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.0
+offset_top = -299.5
+offset_right = 578.0
+offset_bottom = 299.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.4392157)
+
+[node name="Paused" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.5
+offset_top = 82.0
+offset_right = 162.5
+offset_bottom = 146.0
+grow_horizontal = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_grdc7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttonManager" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttonManager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -68.0
+offset_right = 150.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Continue" type="Button" parent="buttonManager/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="options" type="Button" parent="buttonManager/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="mainMenu" type="Button" parent="buttonManager/VBoxContainer"]
+layout_mode = 2
+text = "Save and to Main Menu"
+
+[node name="exit" type="Button" parent="buttonManager/VBoxContainer"]
+layout_mode = 2
+text = "Save and Exit"
+
+[connection signal="pressed" from="buttonManager/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="buttonManager/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="buttonManager/VBoxContainer/mainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="buttonManager/VBoxContainer/exit" to="." method="_on_exit_pressed"]

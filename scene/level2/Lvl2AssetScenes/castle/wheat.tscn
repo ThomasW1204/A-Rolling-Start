@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjp2v6fgmx10r"]
+
+[ext_resource type="PackedScene" uid="uid://ckybepib764ih" path="res://assets/kenney_nature-kit/Models/DAE format/crops_wheatStageA.dae" id="1_guj66"]
+[ext_resource type="PackedScene" uid="uid://ixqxidhdwtsu" path="res://assets/kenney_nature-kit/Models/DAE format/crops_wheatStageB.dae" id="2_810eh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="crops_wheatStageA" parent="." instance=ExtResource("1_guj66")]
+
+[node name="crops_wheatStageA2" parent="." instance=ExtResource("1_guj66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5245161, 0, -0.51531786)
+
+[node name="crops_wheatStageA3" parent="." instance=ExtResource("1_guj66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5245161, 0, 0.5141025)
+
+[node name="crops_wheatStageA4" parent="." instance=ExtResource("1_guj66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58645725, 0, 0.5141025)
+
+[node name="crops_wheatStageA5" parent="." instance=ExtResource("1_guj66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58645725, 0, -0.5150892)
+
+[node name="crops_wheatStageB" parent="." instance=ExtResource("2_810eh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5608678, 0, 0)
+
+[node name="crops_wheatStageB2" parent="." instance=ExtResource("2_810eh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008620739, 0, -0.50773335)
+
+[node name="crops_wheatStageB3" parent="." instance=ExtResource("2_810eh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008620739, 0, 0.45640755)
+
+[node name="crops_wheatStageB4" parent="." instance=ExtResource("2_810eh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56710356, 0, -0.0026644468)

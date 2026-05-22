@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcu1v8jaddjym"]
+
+[ext_resource type="Script" uid="uid://ckkoxd1pc82uv" path="res://scripts/view_data.gd" id="1_qo47u"]
+
+[node name="viewData" type="Node2D"]
+script = ExtResource("1_qo47u")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = 75.0
+offset_right = 1056.0
+offset_bottom = 535.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_direction = 3
+layout_mode = 2
+alignment = 1
+
+[node name="totalcontainerVbox" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 516.0
+offset_top = 39.0
+offset_right = 663.0
+offset_bottom = 62.0
+text = "View data for: User"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="backButton" type="Button" parent="."]
+offset_left = 1031.0
+offset_top = 23.0
+offset_right = 1127.0
+offset_bottom = 54.0
+text = "Back"
+
+[node name="exportButton" type="Button" parent="."]
+offset_left = 499.0
+offset_top = 562.0
+offset_right = 678.0
+offset_bottom = 597.0
+text = "Export to CSV"
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="exportButton" to="." method="_on_export_button_pressed"]

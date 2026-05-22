@@ -1,0 +1,60 @@
+[gd_scene load_steps=14 format=3 uid="uid://bdvleols5rgtp"]
+
+[ext_resource type="Script" uid="uid://b7ecjpxmi1y5l" path="res://audioManager.gd" id="1_1w3el"]
+[ext_resource type="AudioStream" uid="uid://cep1eiwkmrml2" path="res://Audio/kenney_ui-audio/Audio/click3.ogg" id="2_vn27l"]
+[ext_resource type="AudioStream" uid="uid://e5u8t8ex7tsw" path="res://Audio/kenney_impact-sounds/Audio/impactTin_medium_003.ogg" id="3_1w3el"]
+[ext_resource type="AudioStream" uid="uid://dw3aywpkm2q7y" path="res://Audio/backgroundmusicforvideos-game-gaming-background-music-385611.mp3" id="4_ixfpl"]
+[ext_resource type="AudioStream" uid="uid://vxfsn1mmr5xk" path="res://Audio/kenney_rpg-audio/Audio/cloth2.ogg" id="5_1rhth"]
+[ext_resource type="AudioStream" uid="uid://uyq6wn82ol2i" path="res://Audio/kenney_rpg-audio/Audio/doorOpen_2.ogg" id="6_spk47"]
+[ext_resource type="AudioStream" uid="uid://copuu0gc6qx6c" path="res://Audio/carambiance.mp3" id="7_qdhgj"]
+[ext_resource type="AudioStream" uid="uid://bq0s37t481na3" path="res://Audio/boing(1).mp3" id="8_e8pr6"]
+[ext_resource type="AudioStream" uid="uid://cciapbcbal1nh" path="res://Audio/lockDoor.mp3" id="9_nhnb5"]
+[ext_resource type="AudioStream" uid="uid://dorndn2qdsni" path="res://Audio/lvl2Music.mp3" id="10_njmvo"]
+[ext_resource type="AudioStream" uid="uid://bjwqnywoutvle" path="res://Audio/natureAmbience.mp3" id="11_e4xja"]
+[ext_resource type="AudioStream" uid="uid://d3gb7efqpcccr" path="res://Audio/mainMenu.mp3" id="12_w5mod"]
+[ext_resource type="AudioStream" uid="uid://def4raa7331fg" path="res://Audio/hooray.mp3" id="13_clpbg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1w3el")
+
+[node name="buttonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vn27l")
+
+[node name="newUser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1w3el")
+
+[node name="lvl1BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ixfpl")
+volume_db = -20.0
+
+[node name="equipSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1rhth")
+
+[node name="doorOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_spk47")
+
+[node name="carAmbience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_qdhgj")
+volume_db = -25.0
+
+[node name="Boing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_e8pr6")
+
+[node name="lockdoor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_nhnb5")
+
+[node name="lvl2Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_njmvo")
+volume_db = -15.0
+
+[node name="natrue" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_e4xja")
+volume_db = -30.0
+
+[node name="mainMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_w5mod")
+volume_db = -25.0
+
+[node name="yatta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_clpbg")
+volume_db = -8.0

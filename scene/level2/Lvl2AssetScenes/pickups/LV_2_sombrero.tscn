@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1aj6k475ooi6"]
+
+[ext_resource type="PackedScene" uid="uid://bvb0majtrirg4" path="res://assets/items/Sombrero(1).glb" id="1_r2vo4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_r2vo4")]
+transform = Transform3D(0.38669413, 0, 0, 0, 0.4162918, 0, 0, 0, 0.42316118, 0, -0.23194468, 0)

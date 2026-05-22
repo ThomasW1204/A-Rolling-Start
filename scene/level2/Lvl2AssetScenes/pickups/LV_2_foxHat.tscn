@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vas6ht2crua0"]
+
+[ext_resource type="PackedScene" uid="uid://cinacevooy0e4" path="res://assets/items/Fox Hat.glb" id="1_4e7d7"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Fox Hat" parent="." instance=ExtResource("1_4e7d7")]
+transform = Transform3D(1.823437, 0, 0, 0, 1, 0, 0, 0, 1.7370329, 0, -0.32472682, 0)
